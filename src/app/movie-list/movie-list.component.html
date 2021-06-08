@@ -1,0 +1,23 @@
+<h1 style="text-align: center; color: white;">I MIEI FILM PREFERITI</h1>
+
+<main>
+
+
+  <div class="card mb-3 sfondo"  style="max-width: 1000px;">
+    <div class="row g-0" *ngFor="let movie of movielist; let i = index">
+      <div class="col-md-4 m-3" >
+        <img src="{{movie.image}}" alt="..." style="width: 300px;">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <p class="card-text"><small>{{movie.categories}}</small></p>
+          <a href="#" class="btn-grad" (click)= "viewDetails(movie.id)">Vedi dettagli</a>
+          <a href="#" class="btn-grad" (click)= "editDetails(movie.id)">Modifica film</a>
+
+        </div>
+      </div>
+    </div>
+    </div>
+</main>
+

@@ -1,0 +1,14 @@
+.ng-valid[required], .ng-valid.required  {
+  border-bottom: 10px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+  border-bottom: 10px solid #a94442; /* red */
+}
+div {
+  background: radial-gradient(circle, rgba(60,89,236,1) 0%, rgba(0,1,17,1) 100%);
+  color:lightsteelblue;
+  border: 2px solid rgb(101, 156, 228);
+}
+pre{
+  color: lightsteelblue;
+}

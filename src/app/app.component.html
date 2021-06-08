@@ -1,0 +1,60 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light mb-3" style="background: linear-gradient(90deg, rgba(58,167,180,1) 0%, rgb(27, 40, 181) 50%, rgb(20, 5, 62) 100%); ">
+    <div class="container-fluid">
+      <a class="navbar-brand"  href="#"  [class.active]="selected === 'list'" (click)="showcontent('list')">
+        <img src="https://www.geekjournal.it/wp-content/uploads/2019/09/davidhuynh_52576481_392149364932441_7045049440973236851_n.jpg" alt="" width="70" height="50" style="border-radius: 50%;">Andrea-Film</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn-grad m-3" [class.active]="selected === 'list'" (click)="showcontent('list')">Film</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn-grad m-3" [ngClass]="{'active' : selected === 'rent'}"(click)="showcontent('rent')">Noleggia</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn-grad m-3" [ngClass]="{'active' : selected === 'add'}"(click)="showcontent('add')">Aggiungi</button>
+          </li>
+          <!-- <li>{{prova}}</li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<main>
+  <section class="container.fluid">
+    <div [ngSwitch]="selected">
+      <div *ngSwitchCase="'rent'">
+        <app-rent-movie *ngIf="selected === 'rent'"></app-rent-movie>
+      </div>
+      <div *ngSwitchCase="'detail'">
+        <app-movie-detail [movie]='selectedmovie'></app-movie-detail>
+      </div>
+      <div *ngSwitchCase="'edit'">
+        <app-edit-movie [movie]='selectedmovie' (movieupdated)="updateMovie($event)"></app-edit-movie>
+      </div>
+      <div *ngSwitchDefault>
+        <app-movie-list [movielist]="movies" (showmovie) = "viewDetails($event)" (editmovie) = "editDetails($event)"></app-movie-list>
+        <!--  <app-movie-list *ngIf="selected === 'list'" [prova]='prova' (cambiaprovaparent)="cambiaparent($event)"></app-movie-list> -->
+      </div>
+      <div *ngSwitchCase="'add'">
+        <app-add-movie (movieadd)="addFilm($event)" [lastId]="lastId"></app-add-movie>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="text-muted">
+  <div class="container pt-2 mt-3">
+    <p class="float-right">
+      <a href="#">Ricominciaaa</a>
+    </p>
+    <p style="color: white;">&copy; Andrea-Film - tutti i diritti non sono riservati. Fatene quel che volete</p>
+  </div>
+</footer>

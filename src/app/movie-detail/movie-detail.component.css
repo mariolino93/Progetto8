@@ -1,0 +1,5 @@
+div {
+  background: radial-gradient(circle, rgba(60,89,236,1) 0%, rgba(0,1,17,1) 100%);
+  color: black;
+  border: 2px solid saddlebrown;
+}

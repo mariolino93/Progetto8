@@ -1,0 +1,55 @@
+body {
+  background-image: url(https://i.pinimg.com/originals/9c/60/07/9c6007f80c255a7d619e7508626a543d.jpg) ;
+  background-repeat: cover;
+}
+.sfondo {
+  background: radial-gradient(circle, rgba(60,89,236,1) 0%, rgba(0,1,17,1) 100%);
+
+
+}
+.card-title {
+  color: white;
+  font-size: xx-large;
+}
+
+main {
+  margin-left: 8%;
+}
+small{
+  color: white;
+}
+.navbar-brand {
+    font-size: 40px;
+    background: -webkit-linear-gradient( #870000 0%, #190A05  51%, #870000  100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(128deg, rgba(141,160,255,1) 0%, rgba(0,1,17,1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #870000 0%, #190A05  51%, #870000  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+

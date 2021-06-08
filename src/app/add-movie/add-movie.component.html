@@ -1,0 +1,30 @@
+<h1>Aggiungi Nuovo Film</h1>
+<form name="addform" novalidate id="addform" #addform="ngForm">
+  <div class="row">
+    <div class="col-6">
+      <label for="title">Inserisci Titolo</label>
+      <input type="text" id="title" #title="ngModel" class="form-control" name="title" [(ngModel)]="newmovie.title"
+        required>
+      <div class="alert alert-danger" [hidden]="title.valid || title.pristine"> Titolo richiesto </div>
+    </div>
+    <div class="col-6">
+      <label for="image">Inserisci un percorso immagine</label>
+      <input type="text" id="image" #image="ngModel" class="form-control" name="image" [(ngModel)]="newmovie.image"
+        required>
+      <div class="alert alert-danger" [hidden]="image.valid || image.pristine"> Percorso immagine richiesto </div>
+    </div>
+    <div class="col-6">
+      <label for="cast">Inserisci il cast</label>
+      <input type="text" id="cast" #cast="ngModel" class="form-control" name="cast" [(ngModel)]="newmovie.cast"
+        required>
+      <div class="alert alert-danger" [hidden]="cast.valid || cast.pristine"> Cast richiesto </div>
+    </div>
+    <div class="col-6">
+      <label for="plot">Inserisci il plot</label>
+      <input type="text" id="plot" #plot="ngModel" class="form-control" name="plot" [(ngModel)]="newmovie.plot"
+        required>
+      <div class="alert alert-danger" [hidden]="plot.valid || plot.pristine"> Plot richiesto </div>
+    </div>
+  </div>
+  <button (click)="addNewFilm(newmovie)" class="btn-grad m-4">Aggiungi Film</button>
+</form>

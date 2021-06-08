@@ -1,0 +1,12 @@
+<h1 class="m-3" style="color: blanchedalmond;">{{title | titlecase}}</h1>
+<div class="m-3" style="max-width: 50%;">
+  <label for="quantity" class="form-label">Quantità</label>
+  <input type="number" class="form-control" id="moviequantity" placeholder="0" min="0" max="100" step="1"
+    name="moviequantity" [(ngModel)]="quantity" #moviequantity (change)="calculate(moviequantity.value)">
+  <p>Prezzo singolo film: in euro: {{price | currency:'EUR'}}, in dollari {{price2 | currency:'USD'}}</p>
+
+  <h3>Total price in USD:</h3>
+  <p>{{total2 | currency:'USD'}}</p>
+  <h3>Total price in EURO:</h3>
+  <p>{{total | currency:'EUR'}}</p>
+</div>
